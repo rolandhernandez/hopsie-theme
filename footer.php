@@ -5,15 +5,16 @@
  */
 ?>
 
-<footer class="site-footer" role="contentinfo">
-  <nav class="nav-footer-wrap" role="navigation">
-    <?php h5bs_footer_nav(); ?>
-  </nav>
-
-  <?php get_template_part( 'parts/icons', 'social' ); ?>
-
-  <p class="copyright">&copy; <?= date( 'Y' ); ?> <?= get_bloginfo( 'name' ); ?></p>
-</footer>
+<div class="top-bar footer" id="responsive-menu">
+  <div class="top-bar-left">
+  <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text"><?php bloginfo( 'name' ); ?></li>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+  <?php h5bs_footer_nav(); ?>
+  </div>
+</div>
 
 <?php wp_footer(); ?>
 

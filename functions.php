@@ -3,7 +3,8 @@
 // Enqueue Styles
 function h5bs_enqueue_styles() {
   wp_enqueue_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.13.0/css/all.css' );
-  wp_enqueue_style( 'h5bs-theme', get_template_directory_uri() . '/assets/css/theme.css', false, '1.0.0' );
+  wp_enqueue_style( 'foundation', 'https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css');
+  //wp_enqueue_style( 'h5bs-theme', get_template_directory_uri() . '/assets/css/theme.css', false, '1.0.0' );
   wp_enqueue_style( 'h5bs-custom', get_template_directory_uri() . '/custom.css', false, '1.0.0' );
 }
 
@@ -38,7 +39,7 @@ function h5bs_primary_nav() {
     'container'       => false,                        // remove nav container
     'menu'            => 'Primary Nav',                // nav name
     'menu_id'         => 'nav-main',                   // custom id
-    'menu_class'      => 'nav-main nav group',         // custom class
+    'menu_class'      => 'menu',         // custom class
     'theme_location'  => 'primary',                    // where it's located in the theme
     'before'          => '',                           // before the menu
     'after'           => '',                           // after the menu
@@ -70,7 +71,7 @@ function h5bs_footer_nav() {
     'container'       => false,                        // remove nav container
     'menu'            => 'Footer Nav',                 // nav name
     'menu_id'         => 'nav-footer',                 // custom id
-    'menu_class'      => 'nav-footer nav group',       // custom class
+    'menu_class'      => 'menu',       // custom class
     'theme_location'  => 'footer',                     // where it's located in the theme
     'before'          => '',                           // before the menu
     'after'           => '',                           // after the menu

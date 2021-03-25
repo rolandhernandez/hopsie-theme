@@ -1,23 +1,28 @@
 <?php
 /**
- * Default Page Template
+ * Default Single Post Template
  *
  */
 
 get_header(); ?>
 
-<div class="content-wrap page-content" role="main">
+<div class="grid-x grid-padding-x align-center-middle flex-dir-column" style="min-height: 100vh">
+  <div class="cell small-6 flex-container">
+  <?php while ( have_posts() ) : the_post(); ?>
 
-  <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
-  <article <?php post_class( 'group' ); ?> role="article">
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'group' ); ?> role="article">
+  <header>
     <h1><?php the_title(); ?></h1>
-    <?php the_content(); ?>
-  </article>
+    <time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_time( 'F j, Y' ); ?></time>
+  </header>
 
-  <?php endwhile; endif; ?>
+  <?php the_content(); ?>
+</article>
 
-</div><!-- end content -->
+<?php comments_template( '', true ); ?>
+<?php endwhile; ?>
+  </div>
+</div>
 
 <?php // get_sidebar(); ?>
 
